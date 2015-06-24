@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-25T00:06:13+08:00</updated>
+  <updated>2015-06-25T00:10:46+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[郑洪毅]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
