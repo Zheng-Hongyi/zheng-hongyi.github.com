@@ -9,8 +9,10 @@
   <meta name="author" content="郑洪毅">
 
   
-  <meta name="description" content="本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：
-1、安装brew curl -LsSf http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2% &hellip;">
+  <meta name="description" content="这里只贴出脚本 #!/bin/sh #根据需要配置
+ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
+mkdir "${ipaDir}" #工程目录
+distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +68,84 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/28/iosda-bao/">iOS打包（没有cocoapods）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-28T17:46:04+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:46 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这里只贴出脚本 <br></p>
+
+<pre><code>#!/bin/sh
+
+#根据需要配置
+ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
+mkdir "${ipaDir}"
+
+#工程目录
+distDir="/Users/zheng/Desktop/Workbench/KungFuBear/project"
+
+cd "${distDir}"
+
+appFolder="test"
+appName="tmp"
+#根据工程需要来配置
+target="project" 
+clientVersion=$1
+
+releaseDir="build/Release-iphoneos"
+
+TARGET="${target}"
+
+CONFIGURATION="Release"
+SDK="iphoneos"
+#根据工程配置
+IDENTITY="iPhone Distribution:————y Co. Ltd"
+KEYCHAIN="/Library/Keychains/System.keychain"
+PASSWORD=""
+
+security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
+
+#sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer  
+xcodebuild clean
+xcodebuild -target "${TARGET}" -configuration ${CONFIGURATION}
+ipapath="${ipaDir}/${appName}${clientVersion}.ipa"
+ipa="${appName}.ipa"
+echo "$ipapath"
+
+appfile="${releaseDir}/${TARGET}.app"
+echo "$appfile"
+
+xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
+
+echo "=========Success========="
+echo "Waiting for next runtime......"
+
+
+#done
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -221,6 +301,10 @@ git push origin source<br></p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/28/iosda-bao/">iOS打包（没有cocoapods）</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/06/28/iosda-bao-jiao-ben/">iOS打包脚本（有cocoapods）</a>

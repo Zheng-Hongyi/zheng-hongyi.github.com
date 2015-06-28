@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS打包脚本（有cocoapods） - 技术进阶</title>
+  <title>iOS打包（没有cocoapods） - 技术进阶</title>
   <meta name="author" content="郑洪毅">
 
   
-  <meta name="description" content="本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：
-1、安装brew curl -LsSf http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2% &hellip;">
+  <meta name="description" content="这里只贴出脚本 #!/bin/sh #根据需要配置
+ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
+mkdir "${ipaDir}" #工程目录
+distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/">
+  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="技术进阶" type="application/atom+xml">
@@ -69,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">iOS打包脚本（有cocoapods）</h1>
+      <h1 class="entry-title">iOS打包（没有cocoapods）</h1>
     
     
       <p class="meta">
@@ -78,76 +80,56 @@
 
 
 
-<time class='entry-date' datetime='2015-06-28T17:20:51+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:20 pm</span></time>
+<time class='entry-date' datetime='2015-06-28T17:46:04+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:46 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：<br>
-1、安装brew <br>
-curl -LsSf <a href="http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01">http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01</a> <br>
-2、安装xctool <br>
-      sudo brew update <br>
-      sudo brew install xctool <br>
-3、然后就可以运用这里的脚本了 （建议放在一个文件里然后运行）</p>
-
-<p><h>
-脚本说明：<br></p>
+<div class="entry-content"><p>这里只贴出脚本 <br></p>
 
 <pre><code>#!/bin/sh
 
-#  autoCompile.sh
-
-#
-#  Created by zheng on 15-5-6.
-#  Copyright (c) 2015年 zheng. All rights reserved.
-
-#输出目录 (这个需要配置)
-ipaDir="/Users/hongyizheng/Desktop/iPa/Keep"
+#根据需要配置
+ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
 mkdir "${ipaDir}"
 
-#临时目录，这里是要将源代码拷贝到一个临时目录 （也需要配置）
-sourceDir="/Users/hongyizheng/Desktop/iPa/Temp"
-mkdir "${sourceDir}"
+#工程目录
+distDir="/Users/zheng/Desktop/Workbench/KungFuBear/project"
 
-#源文件所在目录 （需要配置，这里是临时的）
-distDir="/Users/hongyizheng/Desktop/workbench/keepdev/temp"
-cp -R "${distDir}" "${sourceDir}"
+cd "${distDir}"
 
-#简单的配置
-appName="Keep"
-target="Keep"
-#参数1 版本号
+appFolder="test"
+appName="tmp"
+#根据工程需要来配置
+target="project" 
 clientVersion=$1
-#参数2 打包时间
-compileTime=$2
+
+releaseDir="build/Release-iphoneos"
+
+TARGET="${target}"
 
 CONFIGURATION="Release"
+SDK="iphoneos"
+#根据工程配置
+IDENTITY="iPhone Distribution:————y Co. Ltd"
 KEYCHAIN="/Library/Keychains/System.keychain"
-
-#一个临时目录
-buildPath="/Users/hongyizheng/Desktop/keep.xcarchive"
-#最后的输出路径
-ipaName="/Users/hongyizheng/Desktop/keep_${clientVersion}_${compileTime}.ipa"
-#证书 (需要配置，输入文件名称即可)
-profile=""
-
-
-#进入临时目录准备开始编译 （这里需要注意与工程一直）
-cd "${sourceDir}/temp"
+PASSWORD=""
 
 security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
 
-#开始编译
-xctool -workspace "Keep.xcworkspace" -scheme "Keep" -configuration ${CONFIGURATION} clean
+#sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer  
+xcodebuild clean
+xcodebuild -target "${TARGET}" -configuration ${CONFIGURATION}
+ipapath="${ipaDir}/${appName}${clientVersion}.ipa"
+ipa="${appName}.ipa"
+echo "$ipapath"
 
-xctool  -workspace "Keep.xcworkspace" -scheme "Keep" archive -archivePath ${buildPath}
-#开始导出
-xcodebuild -exportArchive -exportFormat IPA -archivePath ${buildPath} -exportPath ${ipaName} -exportProvisioningProfile "$profile"
-#删除临时文件
-rm -rf "${sourceDir}"
+appfile="${releaseDir}/${TARGET}.app"
+echo "$appfile"
+
+xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
 
 echo "=========Success========="
 echo "Waiting for next runtime......"
@@ -170,7 +152,7 @@ echo "Waiting for next runtime......"
 
 
 
-<time class='entry-date' datetime='2015-06-28T17:20:51+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:20 pm</span></time>
+<time class='entry-date' datetime='2015-06-28T17:46:04+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:46 pm</span></time>
       
 
 <span class="categories">
@@ -184,7 +166,7 @@ echo "Waiting for next runtime......"
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/" >Tweet</a>
   
   
   
@@ -193,10 +175,8 @@ echo "Waiting for next runtime......"
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/06/28/hello-blog/" title="Previous Post: 你好，博客">&laquo; 你好，博客</a>
+        <a class="basic-alignment left" href="/blog/2015/06/28/iosda-bao-jiao-ben/" title="Previous Post: iOS打包脚本（有cocoapods）">&laquo; iOS打包脚本（有cocoapods）</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/06/28/iosda-bao/" title="Next Post: iOS打包（没有cocoapods）">iOS打包（没有cocoapods） &raquo;</a>
       
     </p>
   </footer>

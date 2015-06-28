@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | 技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-28T17:34:22+08:00</updated>
+  <updated>2015-06-28T17:53:59+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS打包（没有cocoapods）]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/"/>
+    <updated>2015-06-28T17:46:04+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao</id>
+    <content type="html"><![CDATA[<p>这里只贴出脚本 <br></p>
+
+<pre><code>#!/bin/sh
+
+#根据需要配置
+ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
+mkdir "${ipaDir}"
+
+#工程目录
+distDir="/Users/zheng/Desktop/Workbench/KungFuBear/project"
+
+cd "${distDir}"
+
+appFolder="test"
+appName="tmp"
+#根据工程需要来配置
+target="project" 
+clientVersion=$1
+
+releaseDir="build/Release-iphoneos"
+
+TARGET="${target}"
+
+CONFIGURATION="Release"
+SDK="iphoneos"
+#根据工程配置
+IDENTITY="iPhone Distribution:————y Co. Ltd"
+KEYCHAIN="/Library/Keychains/System.keychain"
+PASSWORD=""
+
+security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
+
+#sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer  
+xcodebuild clean
+xcodebuild -target "${TARGET}" -configuration ${CONFIGURATION}
+ipapath="${ipaDir}/${appName}${clientVersion}.ipa"
+ipa="${appName}.ipa"
+echo "$ipapath"
+
+appfile="${releaseDir}/${TARGET}.app"
+echo "$appfile"
+
+xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
+
+echo "=========Success========="
+echo "Waiting for next runtime......"
+
+
+#done
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS打包脚本（有cocoapods）]]></title>
