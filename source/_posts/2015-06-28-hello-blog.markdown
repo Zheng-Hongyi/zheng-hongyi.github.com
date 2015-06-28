@@ -3,15 +3,14 @@ layout: post
 title: "你好，博客"
 date: 2015-06-28 15:57:57 +0800
 comments: true
-categories: Blog
+categories: 博客
 ---
 ##博客笔记（只为提醒我自己）
 1、新建博客
 ---
 rake new_post['博客title'] <br>
 rake generate  <br>
-rake preview <br>
-rake deploy<br>
+rake preview 
 2、发布博客
 ---
 rake deploy 
