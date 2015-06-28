@@ -4,7 +4,7 @@
   <title><![CDATA[技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-28T16:50:39+08:00</updated>
+  <updated>2015-06-28T17:00:03+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -18,24 +18,24 @@
     <link href="http://zheng-hongyi.github.io/blog/2015/06/28/hello-blog/"/>
     <updated>2015-06-28T15:57:57+08:00</updated>
     <id>http://zheng-hongyi.github.io/blog/2015/06/28/hello-blog</id>
-    <content type="html"><![CDATA[<h1>博客笔记（只为提醒我自己）</h1>
+    <content type="html"><![CDATA[<h2>博客笔记（只为提醒我自己）</h2>
 
-<h2>新建博客</h2>
+<h2>1、新建博客</h2>
 
-<p>rake new_post[&lsquo;博客title&rsquo;]
-rake generate<br/>
-rake preview
-rake deploy</p>
+<p>rake new_post[&lsquo;博客title&rsquo;] <br>
+rake generate  <br>
+rake preview <br>
+rake deploy<br></p>
 
-<h2>发布博客</h2>
+<h2>2、发布博客</h2>
 
 <p>rake deploy</p>
 
-<h2>推送分支</h2>
+<h2>3、推送分支</h2>
 
-<p>git add .
-git commit -a &ldquo;commont&rdquo;
-git push origin source</p>
+<p>git add . <br>
+git commit -a &ldquo;commont&rdquo;<br>
+git push origin source<br></p>
 ]]></content>
   </entry>
   
