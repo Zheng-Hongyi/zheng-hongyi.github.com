@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>技术进阶</title>
+  <title>iOS打包脚本（有cocoapods） - 技术进阶</title>
   <meta name="author" content="郑洪毅">
 
   
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zheng-hongyi.github.io/">
+  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="技术进阶" type="application/atom+xml">
@@ -64,15 +64,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/06/28/iosda-bao-jiao-ben/">iOS打包脚本（有cocoapods）</a></h1>
+      <h1 class="entry-title">iOS打包脚本（有cocoapods）</h1>
     
     
       <p class="meta">
@@ -88,7 +85,7 @@
   </header>
 
 
-  <div class="entry-content"><p>本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：<br>
+<div class="entry-content"><p>本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：<br>
 1、安装brew <br>
 curl -LsSf <a href="http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01">http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01</a> <br>
 2、安装xctool <br>
@@ -159,63 +156,52 @@ echo "Waiting for next runtime......"
 #done
 </code></pre>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
+  
+
+<span class="byline author vcard">Posted by <span class="fn">郑洪毅</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-06-28T17:20:51+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:20 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blog/'>blog</a>
+  
+</span>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2015/06/28/hello-blog/">你好，博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-06-28T15:57:57+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:57 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>博客笔记（只为提醒我自己）</h2>
-
-<h2>1、新建博客</h2>
-
-<p>rake new_post[&lsquo;博客title&rsquo;] <br>
-rake generate  <br>
-rake preview</p>
-
-<h2>2、发布博客</h2>
-
-<p>rake deploy</p>
-
-<h2>3、推送分支</h2>
-
-<p>git add . <br>
-git commit -a &ldquo;commont&rdquo;<br>
-git push origin source<br></p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/06/28/hello-blog/" title="Previous Post: 你好，博客">&laquo; 你好，博客</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -239,6 +225,7 @@ git push origin source<br></p>
 
   
 </aside>
+
 
     </div>
   </div>
