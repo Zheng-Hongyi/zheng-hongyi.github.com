@@ -1,0 +1,57 @@
+---
+layout: post
+title: "iOS打包（没有cocoapods）"
+date: 2015-06-28 17:46:04 +0800
+comments: true
+categories: Blog
+---
+这里只贴出脚本 <br>
+
+	#!/bin/sh
+
+	#根据需要配置
+	ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
+	mkdir "${ipaDir}"
+	
+	#工程目录
+	distDir="/Users/zheng/Desktop/Workbench/KungFuBear/project"
+
+	cd "${distDir}"
+
+	appFolder="test"
+	appName="tmp"
+	#根据工程需要来配置
+	target="project" 
+	clientVersion=$1
+
+	releaseDir="build/Release-iphoneos"
+
+	TARGET="${target}"
+
+	CONFIGURATION="Release"
+	SDK="iphoneos"
+	#根据工程配置
+	IDENTITY="iPhone Distribution:————y Co. Ltd"
+	KEYCHAIN="/Library/Keychains/System.keychain"
+	PASSWORD=""
+
+	security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
+
+	#sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer	
+	xcodebuild clean
+	xcodebuild -target "${TARGET}" -configuration ${CONFIGURATION}
+	ipapath="${ipaDir}/${appName}${clientVersion}.ipa"
+	ipa="${appName}.ipa"
+	echo "$ipapath"
+
+	appfile="${releaseDir}/${TARGET}.app"
+	echo "$appfile"
+
+	xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
+
+	echo "=========Success========="
+	echo "Waiting for next runtime......"
+
+
+	#done
+
