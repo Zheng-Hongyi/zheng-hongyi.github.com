@@ -4,7 +4,7 @@
   <title><![CDATA[技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-28T17:00:03+08:00</updated>
+  <updated>2015-06-28T17:11:38+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -24,8 +24,7 @@
 
 <p>rake new_post[&lsquo;博客title&rsquo;] <br>
 rake generate  <br>
-rake preview <br>
-rake deploy<br></p>
+rake preview</p>
 
 <h2>2、发布博客</h2>
 
