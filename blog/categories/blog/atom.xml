@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | 技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-28T16:39:36+08:00</updated>
+  <updated>2015-06-28T16:50:39+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -14,11 +14,28 @@
 
   
   <entry>
-    <title type="html"><![CDATA['Hello Blog']]></title>
+    <title type="html"><![CDATA[你好，博客]]></title>
     <link href="http://zheng-hongyi.github.io/blog/2015/06/28/hello-blog/"/>
     <updated>2015-06-28T15:57:57+08:00</updated>
     <id>http://zheng-hongyi.github.io/blog/2015/06/28/hello-blog</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h1>博客笔记（只为提醒我自己）</h1>
+
+<h2>新建博客</h2>
+
+<p>rake new_post[&lsquo;博客title&rsquo;]
+rake generate<br/>
+rake preview
+rake deploy</p>
+
+<h2>发布博客</h2>
+
+<p>rake deploy</p>
+
+<h2>推送分支</h2>
+
+<p>git add .
+git commit -a &ldquo;commont&rdquo;
+git push origin source</p>
 ]]></content>
   </entry>
   
