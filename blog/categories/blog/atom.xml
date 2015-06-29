@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | 技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-28T17:53:59+08:00</updated>
+  <updated>2015-06-29T22:44:00+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS提交后加急审核]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/"/>
+    <updated>2015-06-29T22:38:34+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he</id>
+    <content type="html"><![CDATA[<p>加急审核其实很简单，官方有文档，这里只附上链接，<a href="https://developer.apple.com/appstore/contact/appreviewteam/index.html">点击进入</a>，小学英语水平即可读懂。这里需要说明的是支持中文。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS打包（没有cocoapods）]]></title>
