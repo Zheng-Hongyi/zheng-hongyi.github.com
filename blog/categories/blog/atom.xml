@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | 技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-29T22:44:00+08:00</updated>
+  <updated>2015-06-29T23:39:20+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[开发感悟]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu/"/>
+    <updated>2015-06-29T23:30:30+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu</id>
+    <content type="html"><![CDATA[<p>编程是一件很快乐的事，边编程边思考，编程一切，思考一切，乐在其中。</p>
+
+<h3>编程方法论</h3>
+
+<p>1、编程锻炼的是解决问题的能力，说明白点，就是如何解决问题，在这个过程中，总结出一套适用于自己的解决问题的过程，也可以说是步骤，由小见大，成为你的方法论，指导一切。<br>
+2、编程锻炼的是评估预测能力。根据自己现有的资源或者能力，来预测一项任务的截止日期。<br></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS提交后加急审核]]></title>

@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS打包（没有cocoapods） - 技术进阶</title>
+  <title>开发感悟 - 技术进阶</title>
   <meta name="author" content="郑洪毅">
 
   
-  <meta name="description" content="这里只贴出脚本 #!/bin/sh #根据需要配置
-ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
-mkdir "${ipaDir}" #工程目录
-distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
+  <meta name="description" content="编程是一件很快乐的事，边编程边思考，编程一切，思考一切，乐在其中。 编程方法论 1、编程锻炼的是解决问题的能力，说明白点，就是如何解决问题，在这个过程中，总结出一套适用于自己的解决问题的过程，也可以说是步骤，由小见大，成为你的方法论，指导一切。
+2、编程锻炼的是评估预测能力。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@ distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/">
+  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="技术进阶" type="application/atom+xml">
@@ -71,7 +69,7 @@ distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
   
   <header>
     
-      <h1 class="entry-title">iOS打包（没有cocoapods）</h1>
+      <h1 class="entry-title">开发感悟</h1>
     
     
       <p class="meta">
@@ -80,63 +78,19 @@ distDir="/Users/zheng/Desktop/Workbench/KungFuBear/ &hellip;">
 
 
 
-<time class='entry-date' datetime='2015-06-28T17:46:04+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:46 pm</span></time>
+<time class='entry-date' datetime='2015-06-29T23:30:30+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:30 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>这里只贴出脚本 <br></p>
+<div class="entry-content"><p>编程是一件很快乐的事，边编程边思考，编程一切，思考一切，乐在其中。</p>
 
-<pre><code>#!/bin/sh
+<h3>编程方法论</h3>
 
-#根据需要配置
-ipaDir="/Users/zheng/Desktop/Zheng/iPa/temp"
-mkdir "${ipaDir}"
-
-#工程目录
-distDir="/Users/zheng/Desktop/Workbench/KungFuBear/project"
-
-cd "${distDir}"
-
-appFolder="test"
-appName="tmp"
-#根据工程需要来配置
-target="project" 
-clientVersion=$1
-
-releaseDir="build/Release-iphoneos"
-
-TARGET="${target}"
-
-CONFIGURATION="Release"
-SDK="iphoneos"
-#根据工程配置
-IDENTITY="iPhone Distribution:————y Co. Ltd"
-KEYCHAIN="/Library/Keychains/System.keychain"
-PASSWORD=""
-
-security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
-
-#sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer  
-xcodebuild clean
-xcodebuild -target "${TARGET}" -configuration ${CONFIGURATION}
-ipapath="${ipaDir}/${appName}${clientVersion}.ipa"
-ipa="${appName}.ipa"
-echo "$ipapath"
-
-appfile="${releaseDir}/${TARGET}.app"
-echo "$appfile"
-
-xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
-
-echo "=========Success========="
-echo "Waiting for next runtime......"
-
-
-#done
-</code></pre>
+<p>1、编程锻炼的是解决问题的能力，说明白点，就是如何解决问题，在这个过程中，总结出一套适用于自己的解决问题的过程，也可以说是步骤，由小见大，成为你的方法论，指导一切。<br>
+2、编程锻炼的是评估预测能力。根据自己现有的资源或者能力，来预测一项任务的截止日期。<br></p>
 </div>
 
 
@@ -152,7 +106,7 @@ echo "Waiting for next runtime......"
 
 
 
-<time class='entry-date' datetime='2015-06-28T17:46:04+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:46 pm</span></time>
+<time class='entry-date' datetime='2015-06-29T23:30:30+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:30 pm</span></time>
       
 
 <span class="categories">
@@ -166,7 +120,7 @@ echo "Waiting for next runtime......"
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu/" >Tweet</a>
   
   
   
@@ -175,10 +129,8 @@ echo "Waiting for next runtime......"
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/06/28/iosda-bao-jiao-ben/" title="Previous Post: iOS打包脚本（有cocoapods）">&laquo; iOS打包脚本（有cocoapods）</a>
+        <a class="basic-alignment left" href="/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/" title="Previous Post: iOS提交后加急审核">&laquo; iOS提交后加急审核</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/" title="Next Post: iOS提交后加急审核">iOS提交后加急审核 &raquo;</a>
       
     </p>
   </footer>
