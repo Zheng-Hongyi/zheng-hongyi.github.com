@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | 技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-06-29T23:39:20+08:00</updated>
+  <updated>2015-07-06T23:24:33+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[UISCrollView点击状态栏滚回顶部]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/07/06/uiscrollviewdian-ji-zhuang-tai-lan-gun-hui-ding-bu/"/>
+    <updated>2015-07-06T23:19:50+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/07/06/uiscrollviewdian-ji-zhuang-tai-lan-gun-hui-ding-bu</id>
+    <content type="html"><![CDATA[<p>iOS开发，关于UIScrollView点击状态栏回到顶部，这里有个坑，前两天改同事的代码改出来的bug，就是一个界面上只允许有一个UIScrollView允许滚到顶部，若有其他UIScrollView，必须禁掉，否则就都没有了。
+进阶：以此类推，所有集成字UIScrollView的视图控件，应该都有这个坑，都要注意</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[React Native尝试]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/06/30/react-nativechang-shi/"/>
+    <updated>2015-06-30T08:10:07+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/06/30/react-nativechang-shi</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[开发感悟]]></title>
@@ -84,84 +103,6 @@ appfile="${releaseDir}/${TARGET}.app"
 echo "$appfile"
 
 xcrun -sdk iphoneos PackageApplication -v "$appfile" -o "$ipapath"
-
-echo "=========Success========="
-echo "Waiting for next runtime......"
-
-
-#done
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS打包脚本（有cocoapods）]]></title>
-    <link href="http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben/"/>
-    <updated>2015-06-28T17:20:51+08:00</updated>
-    <id>http://zheng-hongyi.github.io/blog/2015/06/28/iosda-bao-jiao-ben</id>
-    <content type="html"><![CDATA[<p>本文章借助了xctool，所以要首先安装xctool，要安装xctool，这里通过brew（一个包管理工具），所以这里的步骤是：<br>
-1、安装brew <br>
-curl -LsSf <a href="http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01">http://github.com/mxcl/homebrew/tarball/master%C2%A0|sudo%C2%A0tar%C2%A0xvz%C2%A0-C/usr/local%C2%A0--strip%C2%A01</a> <br>
-2、安装xctool <br>
-      sudo brew update <br>
-      sudo brew install xctool <br>
-3、然后就可以运用这里的脚本了 （建议放在一个文件里然后运行）</p>
-
-<p><h>
-脚本说明：<br></p>
-
-<pre><code>#!/bin/sh
-
-#  autoCompile.sh
-
-#
-#  Created by zheng on 15-5-6.
-#  Copyright (c) 2015年 zheng. All rights reserved.
-
-#输出目录 (这个需要配置)
-ipaDir="/Users/hongyizheng/Desktop/iPa/Keep"
-mkdir "${ipaDir}"
-
-#临时目录，这里是要将源代码拷贝到一个临时目录 （也需要配置）
-sourceDir="/Users/hongyizheng/Desktop/iPa/Temp"
-mkdir "${sourceDir}"
-
-#源文件所在目录 （需要配置，这里是临时的）
-distDir="/Users/hongyizheng/Desktop/workbench/keepdev/temp"
-cp -R "${distDir}" "${sourceDir}"
-
-#简单的配置
-appName="Keep"
-target="Keep"
-#参数1 版本号
-clientVersion=$1
-#参数2 打包时间
-compileTime=$2
-
-CONFIGURATION="Release"
-KEYCHAIN="/Library/Keychains/System.keychain"
-
-#一个临时目录
-buildPath="/Users/hongyizheng/Desktop/keep.xcarchive"
-#最后的输出路径
-ipaName="/Users/hongyizheng/Desktop/keep_${clientVersion}_${compileTime}.ipa"
-#证书 (需要配置，输入文件名称即可)
-profile=""
-
-
-#进入临时目录准备开始编译 （这里需要注意与工程一直）
-cd "${sourceDir}/temp"
-
-security unlock-keychain -p ${PASSWORD} ${KEYCHAIN}
-
-#开始编译
-xctool -workspace "Keep.xcworkspace" -scheme "Keep" -configuration ${CONFIGURATION} clean
-
-xctool  -workspace "Keep.xcworkspace" -scheme "Keep" archive -archivePath ${buildPath}
-#开始导出
-xcodebuild -exportArchive -exportFormat IPA -archivePath ${buildPath} -exportPath ${ipaName} -exportProvisioningProfile "$profile"
-#删除临时文件
-rm -rf "${sourceDir}"
 
 echo "=========Success========="
 echo "Waiting for next runtime......"

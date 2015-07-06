@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zheng-hongyi.github.io/blog/2015/07/06/uiscrollviewdian-ji-zhuang-tai-lan-gun-hui-ding-bu/</loc>
+    <lastmod>2015-07-06T23:19:50+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://zheng-hongyi.github.io/blog/2015/06/30/react-nativechang-shi/</loc>
+    <lastmod>2015-06-30T08:10:07+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://zheng-hongyi.github.io/blog/2015/06/29/kai-fa-gan-wu/</loc>
     <lastmod>2015-06-29T23:30:30+08:00</lastmod>
   </url>
