@@ -4,7 +4,7 @@
   <title><![CDATA[技术进阶]]></title>
   <link href="http://zheng-hongyi.github.io/atom.xml" rel="self"/>
   <link href="http://zheng-hongyi.github.io/"/>
-  <updated>2015-07-07T00:00:07+08:00</updated>
+  <updated>2015-07-25T16:22:45+08:00</updated>
   <id>http://zheng-hongyi.github.io/</id>
   <author>
     <name><![CDATA[郑洪毅]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Iosben Di Tong Zhi]]></title>
+    <link href="http://zheng-hongyi.github.io/blog/2015/07/25/iosben-di-tong-zhi/"/>
+    <updated>2015-07-25T00:00:00+08:00</updated>
+    <id>http://zheng-hongyi.github.io/blog/2015/07/25/iosben-di-tong-zhi</id>
+    <content type="html"><![CDATA[<p>iOS开发本地通知，最好的实践就是做一个闹钟程序。这里只说一下我遇到的问题。</p>
+
+<h3>NSLocalNotification</h3>
+
+<p>我写了一个闹钟插件，所有的逻辑经检查都没有问题，但就是在测试的时候取消通知总是会取消不完全，比如注册了n个，取消的时候取消n-x个，注册的时候也存在注册数量和自己的预期不一致的情况，反复检查逻辑没有问题。<br>
+这里只给出结果，过程不再赘述，原因是线程所致，本地通知的注册与取消在主线程中完成即可避免这个问题。官方文档没有找到合适的解说。可能和UINotification的线程问题同属一类。<br>
+关于UINotification，官方是这么描述的：In a multithreaded application, notifications are always delivered in the thread in which the notification was posted, which may not be the same thread in which an observer &hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS开发有关界面的那点事儿]]></title>

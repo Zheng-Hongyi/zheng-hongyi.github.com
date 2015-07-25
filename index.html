@@ -9,7 +9,7 @@
   <meta name="author" content="郑洪毅">
 
   
-  <meta name="description" content="iOS开发中总会遇到或多或少的坑，这里总结一二。 UIScrollView那点儿坑 iOS开发，关于UIScrollView点击状态栏回到顶部，这里有个坑，前两天改同事的代码改出来的bug，就是一个界面上只允许有一个UIScrollView允许滚到顶部，若有其他UIScrollView，必须禁掉， &hellip;">
+  <meta name="description" content="iOS开发本地通知，最好的实践就是做一个闹钟程序。这里只说一下我遇到的问题。 NSLocalNotification 我写了一个闹钟插件，所有的逻辑经检查都没有问题，但就是在测试的时候取消通知总是会取消不完全，比如注册了n个，取消的时候取消n-x个，注册的时候也存在注册数量和自己的预期不一致的情况 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,41 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/25/iosben-di-tong-zhi/">Iosben Di Tong Zhi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-25T00:00:00+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>iOS开发本地通知，最好的实践就是做一个闹钟程序。这里只说一下我遇到的问题。</p>
+
+<h3>NSLocalNotification</h3>
+
+<p>我写了一个闹钟插件，所有的逻辑经检查都没有问题，但就是在测试的时候取消通知总是会取消不完全，比如注册了n个，取消的时候取消n-x个，注册的时候也存在注册数量和自己的预期不一致的情况，反复检查逻辑没有问题。<br>
+这里只给出结果，过程不再赘述，原因是线程所致，本地通知的注册与取消在主线程中完成即可避免这个问题。官方文档没有找到合适的解说。可能和UINotification的线程问题同属一类。<br>
+关于UINotification，官方是这么描述的：In a multithreaded application, notifications are always delivered in the thread in which the notification was posted, which may not be the same thread in which an observer &hellip;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -430,6 +465,10 @@ git push origin source<br></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/25/iosben-di-tong-zhi/">Iosben Di Tong Zhi</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/06/uiscrollviewdian-ji-zhuang-tai-lan-gun-hui-ding-bu/">iOS开发有关界面的那点事儿</a>
       </li>
     
@@ -443,10 +482,6 @@ git push origin source<br></p>
     
       <li class="post">
         <a href="/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/">iOS提交后加急审核</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/28/iosda-bao/">iOS打包（没有cocoapods）</a>
       </li>
     
   </ul>
