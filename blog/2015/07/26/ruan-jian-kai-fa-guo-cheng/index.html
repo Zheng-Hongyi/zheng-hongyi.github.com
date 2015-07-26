@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS提交后加急审核 - 技术进阶</title>
+  <title>软件开发建议 - 技术进阶</title>
   <meta name="author" content="郑洪毅">
 
   
-  <meta name="description" content="加急审核其实很简单，官方有文档，这里只附上链接，点击进入，小学英语水平即可读懂。这里需要说明的是支持中文。
-">
+  <meta name="description" content="我的软件开发之路虽然不是很长，但是经历了不少，从独立开发到团队协作，都很有感触，这些感触对于大家来说，一定程度上可以起到指导作用。 有从头到尾独立开发的经历很重要 这里所说的独立开发，就是自己一个人负责一个项目的开发工作，这样可以锻炼一个人的各方面的能力，架构方面很明显。另外， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/">
+  <link rel="canonical" href="http://zheng-hongyi.github.io/blog/2015/07/26/ruan-jian-kai-fa-guo-cheng/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="技术进阶" type="application/atom+xml">
@@ -69,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">iOS提交后加急审核</h1>
+      <h1 class="entry-title">软件开发建议</h1>
     
     
       <p class="meta">
@@ -78,14 +77,34 @@
 
 
 
-<time class='entry-date' datetime='2015-06-29T22:38:34+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:38 pm</span></time>
+<time class='entry-date' datetime='2015-07-26T09:06:46+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:06 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>加急审核其实很简单，官方有文档，这里只附上链接，<a href="https://developer.apple.com/appstore/contact/appreviewteam/index.html">点击进入</a>，小学英语水平即可读懂。这里需要说明的是支持中文。</p>
+<div class="entry-content"><p>我的软件开发之路虽然不是很长，但是经历了不少，从独立开发到团队协作，都很有感触，这些感触对于大家来说，一定程度上可以起到指导作用。<br></p>
+
+<h3>有从头到尾独立开发的经历很重要</h3>
+
+<p>这里所说的独立开发，就是自己一个人负责一个项目的开发工作，这样可以锻炼一个人的各方面的能力，架构方面很明显。另外，如果要是能在自己开发的项目上重构一把，那就更好了，如果没有机会，一定要及时总结，指导自己以后写代码。</p>
+
+<h3>职责单一</h3>
+
+<p>一个类、一个方法甚至是一个变量，让它的职责单一，只让它做一件事，这样写代码就好比拼积木，即使有变动，也能很快理清思路，当然，配备适当的注释会更效率。我见过很多人写的代码，一个方法有成百上千行代码，类里面就不用说了，看着很是别扭，有什么改动，成本很大。低耦合和职责单一在一定程度上是相同的。这些在《重构 改善既有代码的设计》以及 《设计模式》中都有涉及。</p>
+
+<h3>MVC亦或MVVM在一定程度上要严格遵守</h3>
+
+<p>mvc，做过.Net的可能用三层架构描述，很多程序员不注重这些的使用，在移动端，我见过很多人，所有的代码都在Controller里面完成，导致Controller特别的大，如果这样，mvc有啥用。我建议最好是层次划分清晰：界面显示层-业务逻辑层-控制器-模型，基本逃不出这个设计，MVVM在解决Controller臃肿的问题上很有效，建议找一些权威网站去了解，例如objc中国<a href="http://objccn.io">http://objccn.io</a></p>
+
+<h3>理论一定要充足，理论指导实践</h3>
+
+<p>我看别人的代码，一个很复杂的算法里面竟然有界面显示，除了职责不单一，我感觉就是理论不足造成的，不知道算法的定义以及要素（有穷性、确切性、输入项、输出项、可行性）</p>
+
+<h3>建议</h3>
+
+<p>先写到这里，建议大家，经常翻看《设计模式》《重构》《算法》之类的书籍。</p>
 </div>
 
 
@@ -101,21 +120,15 @@
 
 
 
-<time class='entry-date' datetime='2015-06-29T22:38:34+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:38 pm</span></time>
+<time class='entry-date' datetime='2015-07-26T09:06:46+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:06 am</span></time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/06/29/iosti-jiao-hou-jia-ji-shen-he/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zheng-hongyi.github.io/blog/2015/07/26/ruan-jian-kai-fa-guo-cheng/" data-via="" data-counturl="http://zheng-hongyi.github.io/blog/2015/07/26/ruan-jian-kai-fa-guo-cheng/" >Tweet</a>
   
   
   
@@ -124,10 +137,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/06/28/iosda-bao/" title="Previous Post: iOS打包（没有cocoapods）">&laquo; iOS打包（没有cocoapods）</a>
+        <a class="basic-alignment left" href="/blog/2015/07/25/iosben-di-tong-zhi/" title="Previous Post: Iosben Di Tong Zhi">&laquo; Iosben Di Tong Zhi</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/06/29/kai-fa-gan-wu/" title="Next Post: 开发感悟">开发感悟 &raquo;</a>
       
     </p>
   </footer>
