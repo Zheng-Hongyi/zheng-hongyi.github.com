@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "iOS开发 本地通知"
+title: "iOS开发本地通知"
 date: 2015-07-25 15:58:22 +0800
 comments: true
 categories:Blog 
